@@ -812,6 +812,15 @@ class Utils {
   }
 }
 
+fetch('/api/contact', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ name, email, subject, message })
+})
+.then(res => res.json())
+.then(data => console.log(data));
+
+
 // Initialize the portfolio app when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
   new PortfolioApp();
